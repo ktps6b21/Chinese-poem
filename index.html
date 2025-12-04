@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>中國古詩 | 香港小學課程（50首）</title>
+  <meta name="description" content="中國古詩網頁：香港小學課程常見古詩彙整，含五言律詩、七言律詩、五言絕句、七言絕句，並附小遊戲。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>中國古詩（香港小學課程）</h1>
+      <p class="subtitle">收錄 50 首｜分類：五言律詩、七言律詩、五言絕句、七言絕句｜附小遊戲</p>
+      <nav class="nav">
+        <a href="#library" class="nav-link">詩庫</a>
+        <a href="#game" class="nav-link">小遊戲</a>
+        <a href="#about" class="nav-link">關於</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 詩庫 -->
+    <section id="library" class="section">
+      <div class="container">
+        <h2>詩庫與篩選</h2>
+        <div class="controls">
+          <div class="control-group">
+            <label for="searchInput">搜尋詩句或作者</label>
+            <input id="searchInput" type="text" placeholder="輸入關鍵字（例：春、杜甫、江南）" />
+          </div>
+          <div class="control-group">
+            <label for="formSelect">體裁分類</label>
+            <select id="formSelect">
+              <option value="all">全部</option>
+              <option value="五言律詩">五言律詩</option>
+              <option value="七言律詩">七言律詩</option>
+              <option value="五言絕句">五言絕句</option>
+              <option value="七言絕句">七言絕句</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="dynastySelect">朝代</label>
+            <select id="dynastySelect">
+              <option value="all">全部</option>
+              <option value="唐">唐</option>
+              <option value="宋">宋</option>
+              <option value="元">元</option>
+              <option value="明">明</option>
+              <option value="清">清</option>
+            </select>
+          </div>
+          <button id="resetBtn" class="btn">重設</button>
+        </div>
+
+        <div id="stats" class="stats"></div>
+        <div id="poemList" class="poem-list"></div>
+      </div>
+    </section>
+
+    <!-- 詳細頁（彈窗） -->
+    <div id="poemModal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button id="modalClose" class="modal-close" aria-label="關閉">×</button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- 小遊戲 -->
+    <section id="game" class="section">
+      <div class="container">
+        <h2>古詩小遊戲</h2>
+        <p class="tip">每題皆隨機生成，包含「辨體裁」、「猜作者」、「補缺字」。</p>
+
+        <div class="game-panel">
+          <div class="game-controls">
+            <label for="gameMode">遊戲模式</label>
+            <select id="gameMode">
+              <option value="form">辨體裁</option>
+              <option value="author">猜作者</option>
+              <option value="fill">補缺字</option>
+            </select>
+            <button id="startGameBtn" class="btn primary">開始出題</button>
+            <button id="nextQuestionBtn" class="btn">下一題</button>
+          </div>
+
+          <div id="questionArea" class="question-area">
+            <div id="questionText" class="question-text"></div>
+            <div id="optionsArea" class="options-area"></div>
+            <div id="feedback" class="feedback"></div>
+          </div>
+
+          <div class="scoreboard">
+            <span id="scoreText">得分：0</span>
+            <span id="progressText">題目：0 / 10</span>
+            <button id="resetGameBtn" class="btn">重置遊戲</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 關於 -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>關於與維護</h2>
+        <p>此站為靜態前端專案，適合部署至 GitHub Pages。不依賴伺服器，詩庫資料在前端載入並提供檢索與遊戲功能。</p>
+        <ul class="about-list">
+          <li><strong>資料維護：</strong>在 <code>script.js</code> 的 <code>POEMS</code> 陣列中新增或編修詩作（建議最終填滿 50 首）。</li>
+          <li><strong>分類規則：</strong>依字數與句式分為「五言／七言」，依篇幅分「律詩（八句，對仗平仄）／絕句（四句）」。</li>
+          <li><strong>教學用途：</strong>可用於朗讀、押韻與意象分析、作者朝代背景認識等。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 古詩學習網 • 適用於 GitHub Pages</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
